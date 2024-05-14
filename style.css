@@ -1,0 +1,359 @@
+:root { /*constant variables*/
+    --home-background: rgb(10, 24, 40);
+    --home-background2: rgb(10, 24, 40);
+    --popup-background: rgb(26, 62, 104);
+    --wheat: rgb(191, 161, 129); /*default color theme for elements on the page*/
+    --wheat-light: rgb(217, 202, 186);
+    --wheat-faded: rgba(217, 202, 186, 0.542);
+    --wheat-faded-light: rgba(217, 202, 186, 0.864);
+    --wheat-faded-medium: rgba(217, 202, 186, 0.754);
+    --checked-on: rgb(4, 205, 4);
+    /* --checked-on: rgb(21, 245, 249); */
+    --checked-off: rgb(49, 46, 46);
+    --checked-off-hover: rgb(61, 58, 58);
+    --checked-on-hover: rgba(3, 215, 3, 0.767);
+    /* --checked-on-hover: rgba(0, 217, 255, 0.85); */
+    --home-btn-clr-default: rgb(191, 161, 129);
+    --home-btn-clr-hover: rgb(156, 132, 106);
+    --home-btn-clr-click: rgb(226, 191, 154);
+}
+
+* { /*Default font style for the website*/
+    font-family: "Georgia";
+}
+
+body {
+    background: linear-gradient(to right, var(--home-background), var(--home-background2));
+}
+
+/* Default settings for any title of a page */
+.page-title{
+    font-size:5em;
+    text-shadow: 4px 4px 6px rgba(14, 14, 14, 0.416);
+    background: -webkit-linear-gradient(var(--wheat), #ffffff); /*gradient top-down from default to white*/
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Button settings for Home page */
+.default-btn {
+    background-color: var(--home-btn-clr-default);
+    border-color: var(--home-btn-clr-default);
+    border-radius: 7%;
+    color: rgb(44, 44, 44);    
+}
+.default-btn:hover {
+    background-color: var(--home-btn-clr-hover);
+    border-color: var(--home-btn-clr-hover);
+    color: aliceblue;
+    font-size: 1.3em;
+    text-shadow: 1px 1px 1px rgb(44, 44, 44); /*text shadow */
+    box-shadow: 1px 2px 2px 3px black; /*give button a shadow when hovering */
+}
+.default-btn:active, .default-btn:focus {
+    background-color: var(--home-btn-clr-click);
+    border-color: var(--home-btn-clr-click);
+}
+.btn-custom{
+    width: 200px;
+    height: 85px;
+    padding: 10px;
+    font-size: 20px;
+}
+.room-btn-custom{
+    width: 150px;
+    height: 75px;
+    padding: 10px;
+    font-size: 20px;
+}
+.lawn-btn-custom {
+    width: 200px;
+    height: 120px;
+    padding: 10px;
+    font-size: 20px;
+}
+.default-btn-small {
+    background-color: var(--home-btn-clr-default);
+    border-color: var(--home-btn-clr-default);
+    border-radius: 15%;
+    color: rgb(44, 44, 44);
+    font-size: 1em;
+    margin-left: 0.2em;
+    margin-right: 0.2em;
+}
+.default-btn-small:hover {
+    background-color: var(--home-btn-clr-default);
+    border-color: var(--home-btn-clr-default);
+    color: aliceblue;
+    text-shadow: 1px 1px 1px rgb(44, 44, 44);
+}
+.default-text {
+    color: var(--wheat-light);
+}
+
+.row-custom1{
+    margin-top: 10px;
+}
+
+.row-custom2{
+    margin-top: 10px;
+}
+
+.row-custom3{
+    margin-top: 50px;
+}
+
+.col-custom{
+    margin-top: 50px;
+}
+
+.btn-power{
+    border-radius: 20%;
+    height: 100px;
+    width: 100px;
+}
+
+.default-checkbox {
+    font-size:2em;
+    background-color: var(--wheat-light);
+    border: 1px solid var(--wheat-faded-light);
+}
+.default-checkbox:checked {
+    background-color: var(--wheat);
+}
+
+.default-checkbox:focus {
+    box-shadow: none;
+}
+
+.checkbox-label-off {
+    color: var(--wheat-faded-medium);
+}
+.checkbox-label-on {
+    color: var(--wheat-light);
+}
+
+
+/*CHECKBOX STYLE - green button - not used because bootstrap is nicer.. -1 hour :-) */
+.default-checkbox input[type="checkbox"] {
+    background-color: var(--checked-off); /*set background to Off color */
+    width: 3em;
+    height: 3em;
+    border: 0.2em solid rgb(0, 0, 0);
+    appearance: none; /*override default css for checkbox*/
+    cursor: pointer; /*turn cursor into a pointer*/
+    border-radius: 100%;
+    display: grid;
+    place-content: center; /*content inside the checkbox*/
+}
+.default-checkbox input[type="checkbox"]:hover {
+    background-color: var(--checked-off-hover);
+}
+.default-checkbox input[type="checkbox"]::before {
+    content:"";
+    text-align: center;
+    width: 2.70em;
+    height: 2.70em;
+    border-radius: 100%;
+    border: 0.1em solid rgb(0, 0, 0);
+    transform: scale(0); /*set this background to 0 size*/
+    transition: 1ms; /*movement effect from Off to On*/
+    box-shadow: inset 0.05em 0.05em; /*set inside checkbox*/
+    background-color: var(--checked-on); /*set background to On color*/ 
+    place-content: center; /*content inside the checkbox*/
+}
+.default-checkbox input[type="checkbox"]:checked::before {
+    transform: scale(1); /*fill the checkbox with above styling*/
+}
+.default-checkbox input[type="checkbox"]:checked:hover::before { /*hovering effect when checked*/
+    background-color: var(--checked-on-hover);
+}
+
+
+.btn-left-align {
+    float:left;
+}
+
+
+
+.large-font{
+    font-size: 6em; 
+    font-weight:bold;
+}
+.small-font{
+    font-size: 1.5em;
+}
+.medium-font{
+    font-size: 3em;
+}
+.minus-button{
+    width: 1.4em;
+    height: 2em; 
+    margin-bottom: 30px;
+    font-size: 2em;
+}
+.plus-button{
+    height: 2em; 
+    margin-bottom: 30px;
+    font-size: 2em;
+}
+#setvalue{
+    width: 2em;
+    height: 1.5em;
+    font-size: 3em;
+    font-weight: bold;
+    text-align: center;
+}
+#power{
+    width:50%
+}
+#powerimage{
+    width:3.5em;
+    height:3.5em;
+}
+.my-top-margin{
+    margin-top: 2.5em;
+}
+div.ui-datepicker{
+    /* This changes the size of calendar
+          in jquery datapicker. */
+    font-size: 1.5em;
+}
+
+#clock-comp {
+    color:var(--wheat-light);
+}
+
+/*popup window styling*/
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.362); /* change background opacity */
+    display: none;
+    z-index: 9999;
+}
+.popupBox {
+    position: fixed;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -110%);
+    background-color: var(--popup-background);
+    border-radius: 30px;
+    border: 1px solid #ffffff;
+    padding: 20px;
+    display: none;
+    z-index: 10000;
+}
+.popupBox h2 {
+    margin-top: 0;
+}
+#closeButton, #enterButton {
+    display: block;
+    margin-top: 10px;
+}
+#enterButton{
+    display: block;
+    margin-top: 10px;
+}
+.exitButton{
+    position: absolute;
+    bottom: 0;
+}
+
+.default-calendar {
+    width: 9em;
+}
+.calendar-label {
+    margin-top: 0.6em;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+}
+
+.temp-comp p {
+    display:inline;
+    margin-right: 0.12em; /*distance between temp value and degF*/
+}
+#homepage-temp { /*indoor temperature div*/
+    color:var(--wheat-light);
+}
+#temp-comp { /*temperature component (integer value)*/
+    font-size: 8em;
+}
+#weather-comp {
+    font-size: 6em;
+}
+#weather-location {
+    font-size: 3em;
+}
+#measurement { /*measurement text (F)*/
+    font-size: 2em;
+    top: 1px;
+}
+#homepage-weather {
+    margin-top:-3em; /*bring closer to indoor temp*/
+    font-size: 0.4em;
+    color: var(--wheat-faded);
+}
+#weather-page { /*overwrite faded color for weather on weather page*/
+    color:var(--wheat-light);
+}
+#roomTempText {
+    margin-top:10px;
+}
+.inputTitle { /*for a P tag above an input field*/
+    margin-bottom: 0px;
+}
+
+.slider {
+    appearance: none;
+    width: 100%; 
+    height: 25px; 
+    background: #f1f1f1; 
+    border-radius: 30px;
+    /* -webkit-appearance: slider-vertical; /*vertical slider*\/ */
+    outline: none; 
+    opacity: 0.8; /* for effects on hover */
+    transition: opacity .2s;
+}
+.slider:hover {
+    opacity: 1; /* full brightness on mouse hover */
+}
+.slider::-webkit-slider-thumb {
+    appearance: none;
+    width: 25px; 
+    height: 25px; 
+    background: var(--wheat);
+    border-radius: 100%; /*circle slider*/
+}
+
+
+#cityBtn {
+    font-size: 3em;
+}
+.bulb {
+    width:50px; 
+    height:50px;
+}
+.settingValue {
+    margin-left: 10px;
+    font-size: 2em;
+}
+#roomName{
+    font-weight: bold;
+}
+.tempValback {
+    background-color: #f1f1f1;
+    margin: 0 auto; /*centers the column*/
+    border-radius: 20px;
+}
+.tempValue {
+    font-size: 1.9em;
+}
+.tempText {
+    margin-bottom: 2px;
+}
+
